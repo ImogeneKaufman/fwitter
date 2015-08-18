@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Fwitter</title>
+  <link rel="stylesheet" type="css/style.css" href="text/css">
+ </head>
+ <body>
+   <h1> Welcome to Fwitter </h1>
+   <h2> These are your current Fweets: </h2>
+   <ul>
+     <% @all_tweets.each do |tweet| %>
+<!--      (tweet) = placeholder  -->
+     <li>Username: <%=tweet.username %> - Message: <%=tweet.message %></li>
+     <% end %>
+   </ul>
+ </body>
+</html>
+
+Create a new Fweet!
+<br>
+<br>
+
+<form action="/new_tweet" method="POST">
+<input type="text" name="username" placeholder="Username">
+<br>
+  <br>
+<input type="text" name="message" placeholder="140 characters or fewer">
+  <br>
+  <br>
+  <input type="submit" value="Make a new Fweet!">
+</form>
+
